@@ -26,6 +26,15 @@ export default function TrailerModal({ media, onClose }) {
     }
   }
 
+  if (server === "server3") {
+    // VidSrc
+    if (media.type === "movie") {
+      embedUrl = `https://player.autoembed.cc/embed/movie/${media.id}`;
+    } else if (media.type === "tv") {
+      embedUrl = `https://player.autoembed.cc/embed/tv/${media.id}/${media.season}/${media.episode}`;
+    }
+  }
+
   return (
     <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 overflow-hidden">
       <div className="bg-black rounded-xl overflow-hidden w-[90%] md:w-[900px] relative aspect-video">
@@ -59,6 +68,17 @@ export default function TrailerModal({ media, onClose }) {
             }`}
           >
             Server 2
+          </button>
+
+          <button
+            onClick={() => setServer("server3")}
+            className={`px-3 py-1 rounded cursor-pointer text-sm ${
+              server === "server3"
+                ? "bg-red-600 text-white"
+                : "bg-gray-700 text-white"
+            }`}
+          >
+            Server 3 (Includes ads)
           </button>
         </div>
 

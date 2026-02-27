@@ -52,7 +52,7 @@ export default function SeasonAccordion({ tvId, seasons, onPlayTrailer }) {
             {/* Season Header */}
             <button
               onClick={() => handleSeasonClick(season.season_number)}
-              className="w-full flex items-center justify-between px-6 py-4 hover:bg-gray-50 transition"
+              className="w-full cursor-pointer flex items-center justify-between px-6 py-4 hover:bg-gray-50 transition"
             >
               <div className="text-left">
                 <h3 className="font-medium text-lg">{season.name}</h3>
