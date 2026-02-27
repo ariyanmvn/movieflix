@@ -12,7 +12,6 @@ export default function TrailerModal({ media, onClose }) {
   return (
     <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
       <div className="bg-black rounded-xl overflow-hidden w-[90%] md:w-[900px] relative aspect-video">
-
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -26,9 +25,11 @@ export default function TrailerModal({ media, onClose }) {
           className="w-full h-full"
           src={embedUrl}
           allowFullScreen
+          sandbox="allow-scripts allow-same-origin"
           frameBorder="0"
         ></iframe>
       </div>
     </div>
+    
   );
 }
